@@ -1,0 +1,156 @@
+/* :root {
+    --clr-accent-1: red;
+} */
+
+/************************************/
+/********** RESET *******************/
+/************************************/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    font: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/************************************/
+/********** UTILITIES ***************/
+/************************************/
+
+.grid-primary {
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+}
+
+.grid-secondary {
+    display: grid;
+    gap: .5rem;
+}
+
+
+/************************************/
+/********** MAIN STYLES *************/
+/************************************/
+
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    font-family: Hanken Grotesk, sans-serif;
+    background: linear-gradient(rgb(145, 149, 211), rgb(160, 61, 190)) ;
+}
+
+.container {
+    --b-radius: 2rem;
+    --padding: 1rem 2rem;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: aliceblue;
+    border-radius: var(--b-radius);
+    max-width: 600px;
+}
+
+.results {
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    border-radius: var(--b-radius);
+    color: hsla(0, 0%, 100%, 0.8);
+    padding: var(--padding);
+    text-align: center;
+}
+
+.summary {
+    padding: var(--padding);
+    color: hsl(224, 30%, 27%);
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.button {
+    background-color: hsl(224, 30%, 27%);
+    line-height: 1;
+    border: none;
+    border-radius: 100vw;
+    padding: 1rem 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover, button:focus {
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+.circle {
+    width: 12rem;
+    background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    justify-self: center;
+    display: grid;
+    place-content: center;
+}
+.score span {
+    display: block;
+    line-height: 1;
+    font-size: 3.5rem;
+    font-weight: 800;
+    justify-self: center;
+    color: white;
+}
+
+.response {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.grid-secondary p {
+    padding-inline: 1rem;
+}
+
+@media (max-width:550px) {
+    .container {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+    body {
+        align-content: start;
+    }
+    .results {
+        border-radius: 0 0 var(--b-radius) var(--b-radius);
+    }
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    border-radius: .5rem;
+    background-color: hsl(var(--item-clr), .1);
+}
+
+.flex-group {
+    display: flex;
+    gap: .5rem;
+}
+
+.summary-item[data-item-type="accent-1"] {
+    --item-clr: hsl(0, 100%, 50%);
+}
+
+
+
