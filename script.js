@@ -5,7 +5,6 @@ xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         const response = JSON.parse(xhttp.responseText);
         console.log(response);
-// try your solution here
 
         
         const populateScores = (score) => {
@@ -15,8 +14,6 @@ xhttp.onreadystatechange = function() {
             }
         }
         populateScores(scores);
-
-// dont edit code below here
     }
 };
 xhttp.open("GET", "data.json", true);
